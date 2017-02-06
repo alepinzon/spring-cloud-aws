@@ -25,7 +25,6 @@ public class AwsSqsConsumerConfiguration {
     public SimpleMessageListenerContainer simpleMessageListenerContainer() {
         SimpleMessageListenerContainer msgListenerContainer = simpleMessageListenerContainerFactory().createSimpleMessageListenerContainer();
         msgListenerContainer.setMessageHandler(queueMessageHandler());
-
         return msgListenerContainer;
     }
 
@@ -42,7 +41,6 @@ public class AwsSqsConsumerConfiguration {
         QueueMessageHandlerFactory queueMsgHandlerFactory = new QueueMessageHandlerFactory();
         queueMsgHandlerFactory.setAmazonSqs(amazonSQSClient());
         QueueMessageHandler queueMessageHandler = queueMsgHandlerFactory.createQueueMessageHandler();
-
         return queueMessageHandler;
     }
 
