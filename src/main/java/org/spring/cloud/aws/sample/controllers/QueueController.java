@@ -1,6 +1,5 @@
 package org.spring.cloud.aws.sample.controllers;
 
-import com.amazonaws.services.sqs.AmazonSQSAsync;
 import org.spring.cloud.aws.sample.dtos.SimpleMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
@@ -21,12 +20,8 @@ public class QueueController {
 
     private static final String DEFAULT_QUEUE_NAME = "test-spring-cloud-aws-sdk";
 
-    private final QueueMessagingTemplate queueMessagingTemplate;
-
     @Autowired
-    public QueueController(AmazonSQSAsync amazonSqs) {
-        this.queueMessagingTemplate = new QueueMessagingTemplate(amazonSqs);
-    }
+    private QueueMessagingTemplate queueMessagingTemplate;
 
     @RequestMapping(
             path = "/sqs/message",
