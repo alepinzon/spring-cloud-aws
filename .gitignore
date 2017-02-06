@@ -4,6 +4,7 @@
 .settings/
 .classpath
 .project
+.idea/
 build/
 data/
 # Ignore Gradle GUI config
